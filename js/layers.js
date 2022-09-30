@@ -51,9 +51,9 @@ addLayer("c", {
                 else if (getBuyableAmount(this.layer, this.id) < 5) return "\nOh that's a smart way to get dust...\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
                 else if (getBuyableAmount(this.layer, this.id) < 10) return "\nBut that's such a waste !\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
                 else if (getBuyableAmount(this.layer, this.id) < 20) return "\nYou could maybe reconsider and stop crushing your coins ?\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
-                else return "\nI can't let you do this anymore. I'm gonna disappear if you crush " + (25-(getBuyableAmount(this.layer, this.id))) + " more coins !\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else return "\nI can't let you do this anymore. I'm gonna disappear if you crush " + (30-(getBuyableAmount(this.layer, this.id))) + " more coins !\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
             },
-            unlocked() {return getBuyableAmount(this.layer, this.id) < 25},
+            unlocked() {return getBuyableAmount(this.layer, this.id) < 30},
             canAfford() { return player[this.layer].points.gte(this.cost()) },
             buy() {
                 player[this.layer].points = player[this.layer].points.sub(this.cost())
