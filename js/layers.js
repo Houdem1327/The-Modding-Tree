@@ -40,7 +40,12 @@ addLayer("c", {
             title: "Hire one trashier",
             description: "You couldn't dream of a better place to find dust ! Dust x2",
             cost: new Decimal(5),
-        }
+        },
+        14: {
+            title: "Hire Abraham",
+            description: "This ",
+            cost: new Decimal(10)
+        },
     },
     buyables: {
         11: {
