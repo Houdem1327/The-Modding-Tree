@@ -28,36 +28,76 @@ addLayer("c", {
     upgrades: {
         11: {
             title: "Hire one duster",
-            description: "This duster will find dust faster than you do. Dust x1.5",
+            description: "This duster will find dust faster than you do.",
             cost: new Decimal(5),
+            effect() {
+                if (hasUpgrade(this.layer, 14)) return 3
+                else return 1.5
+            },        
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }
         },
         12: {
             title: "Hire one jobber",
-            description: "This jobber is dumb. He can barely find anything... Dust x1.1",
+            description: "This jobber is dumb. He can barely find anything...",
             cost: new Decimal(5),
+            effect() {
+                if (hasUpgrade(this.layer, 14)) return 3
+                else return 1.1
+            },        
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }
         },
         13: {
             title: "Hire one trashier",
-            description: "You couldn't dream of a better place to find dust ! Dust x2",
+            description: "You couldn't dream of a better place to find dust !",
             cost: new Decimal(5),
+            effect() {
+                if (hasUpgrade(this.layer, 14)) return 3
+                else return 2
+            },        
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }
         },
         14: {
-            title: "Hire Abraham",
-            description: "This ",
-            cost: new Decimal(10)
+            title: "Abraham the Alchemist",
+            description: "",
+            cost: new Decimal(15),
+            style: 
+            {
+                'color': "black",
+                'font-weight': "bold",
+                'background-image': "URL('https://cdn.discordapp.com/attachments/919754298026508289/1025472188222017536/unknown.png')",
+                'background-size': "cover",
+            },
+            tooltip: "This guy will motivate your workers.",
         },
     },
     buyables: {
         11: {
             cost(x) { return new Decimal(1) },
             title: "Crush a coin",
-            display() { 
+             display() { 
                 if (getBuyableAmount(this.layer, this.id) < 2) return "\nWhy would you destroy a coin you just found ??\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
-                else if (getBuyableAmount(this.layer, this.id) < 5) return "\nOh that's a smart way to get dust...\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
-                else if (getBuyableAmount(this.layer, this.id) < 10) return "\nBut that's such a waste !\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
-                else if (getBuyableAmount(this.layer, this.id) < 20) return "\nYou could maybe reconsider and stop crushing your coins ?\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 3) return "\nIt's GOLD, stop that !\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 4) return "\nWait is your dust increasing ?\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 5) return "\nOh that's quite smart...\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 6) return "\nBut is it really worth ?\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 7) return "\nI wonder if people are gonna read this.\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 8) return "\nHappy Birthday Abraham !\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 9) return "\nWell i don't know if it's still your birthday.\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 10) return "\nAnyways can you stop crushing coins ?\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 11) return "\nYou are polluting our planet !\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 12) return "\n1+1=3\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 13) return "\nRoses are blue and purple are flowers.\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 14) return "\nI think you should stop.\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 15) return "\nI think you should really stop.\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 16) return "\nI think you should really really stop.\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 17) return "\nReally stop you think should really I really.\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 18) return "\nDo you know this idle is based on a real game ?\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 19) return "\nIt was game of the Year in 2018.\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 20) return "\nWhat was i saying already ?\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 21) return "\nAh yes, you could maybe reconsider and stop crushing your coins ?\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
+                else if (getBuyableAmount(this.layer, this.id) < 22) return "\nIt hurts to see you doing that...\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
                 else return "\nI can't let you do this anymore. I'm gonna disappear if you crush " + (30-(getBuyableAmount(this.layer, this.id))) + " more coins !\n\nCoins Crushed : " + (getBuyableAmount(this.layer, this.id))
-            },
+            }, 
             unlocked() {return getBuyableAmount(this.layer, this.id) < 30},
             canAfford() { return player[this.layer].points.gte(this.cost()) },
             buy() {
